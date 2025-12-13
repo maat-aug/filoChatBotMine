@@ -1,3 +1,7 @@
+🤖 FILO AI - Sistema de ChatBot e Logística v1
+
+<img width="640" height="640" alt="image" src="https://github.com/user-attachments/assets/e6b026a6-ca89-4d91-9d1d-c7e9265e4da4" />
+
 ## 🚨 AVISOS 🚨
 
 > **Uso e Segurança:**
