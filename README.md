@@ -11,10 +11,12 @@
 ---
 
 # Pastebins:
+| Arquivo | Link |
+| :---: | :--- | :--- |
 | Filo.lua | https://pastebin.com/9PHxCbc2 |
-| FleetTurtle.lua | https://pastebin.com/biDiu192
-| ScannerTurtle.lua | https://pastebin.com/2dUMU16c
-| RedstoneTurtle.lua | https://pastebin.com/axWVu3yk
+| FleetTurtle.lua | https://pastebin.com/biDiu192 |
+| ScannerTurtle.lua | https://pastebin.com/2dUMU16c | 
+| RedstoneTurtle.lua | https://pastebin.com/axWVu3yk |
 
 ---
 ## 🔑 1. Configuração Crítica da API
