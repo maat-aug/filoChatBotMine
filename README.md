@@ -10,6 +10,13 @@
 
 ---
 
+# Pastebins:
+| Filo.lua | https://pastebin.com/9PHxCbc2 |
+| FleetTurtle.lua | https://pastebin.com/biDiu192
+| ScannerTurtle.lua | https://pastebin.com/2dUMU16c
+| RedstoneTurtle.lua | https://pastebin.com/axWVu3yk
+
+---
 ## 🔑 1. Configuração Crítica da API
 
 O recurso de IA requer que você obtenha sua chave no [Google AI Studio](https://ai.google.dev/) e a insira no arquivo **`filo.lua`**.
