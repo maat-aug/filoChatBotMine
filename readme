@@ -1,73 +1,105 @@
-🤖 FILO AI - Sistema de Automação Logística v1.6
-ComputerCraft / CC: Tweaked
-O FILO AI é um sistema centralizado de automação e logística para Minecraft Modded (ComputerCraft/CC: Tweaked), capaz de gerenciar uma frota de Turtles (Drags), inventários (AE2 e Baús), dispositivos Redstone e fornecer interação via Inteligência Artificial (Gemini).
-⚠️ AVISO CRÍTICO (CÓDIGO GERADO POR IA)
-Este código foi gerado primariamente por Inteligência Artificial (Gemini) e não passou por uma revisão de código completa por humanos.
-Pode conter Bugs: Embora o sistema pareça estável e com lógica funcional (A* Pathfinding, gerenciamento de filas), podem existir erros ou edge cases não identificados.
-Segurança da API: O código expõe a chave da API do Gemini diretamente no arquivo. NÃO COMPARTILHE este arquivo com sua chave API inserida.
-Uso: Use por sua conta e risco. Teste todas as funções em um ambiente seguro antes de implementá-las em sua base principal.
-🔑 CONFIGURAÇÃO CRÍTICA DA API
-É OBRIGATÓRIO que você edite o arquivo principal do Manager (manager.lua) e insira sua chave da API do Gemini.
-Obtenha sua chave no Google AI Studio.
-Edite a linha no manager.lua:
-code
-Lua
-local GEMINI_API_KEY = "SUA_CHAVE_AQUI" -- <<< EDITE AQUI
-🌟 Recursos Principais
-Recurso	Descrição	Componente
-Logística Centralizada	Gerenciamento de filas de tarefas (!moveStorage, !emptyStorage) e despacho automático do Turtle mais próximo.	Manager + Drone
-Integração AE2	Suporte para transferência de itens entre Baús e Sistemas AE2 (usando me_bridge).	Manager + Drone
-Navegação Inteligente	Turtles utilizam A* Pathfinding 3D com mapeamento de obstáculos dinâmico.	Drone
-Monitor & Dashboard	Dashboard visual no Monitor do CC: Tweaked para controle de frota e switches.	Manager
-Controle Redstone	Acionamento de dispositivos Redstone remotamente via Chat (!redstone <Nome> <ON/OFF>).	Manager + Redstone Node
-Scanner Estático	Monitoramento em tempo real de inventários de Baús ou AE2 próximos a PCs/Turtles estáticos.	Manager + Static Scanner
-IA de Interação	Respostas a perguntas gerais do chat sobre Minecraft Modded e função de Quiz/Sorteio.	Manager
-🛠️ Arquitetura do Sistema
-O sistema FILO é composto por quatro scripts principais que devem ser instalados em diferentes máquinas:
-Script	Nome do Arquivo	Instalação	Finalidade
-Manager	manager.lua	Computador Central (com chat box, monitor, modem)	Lógica central, fila de tarefas, IA e Dashboard.
-Drone	drone_fleet.lua	Turtle ou Computador em um Mobile Block (Ex: Frame)	Executa comandos de movimentação e logística (salve como startup).
-Scanner	static_scanner.lua	Computador/Turtle parado ao lado de um inventário	Coleta e reporta dados de inventário para o Manager (salve como startup).
-Redstone Node	redstone_node.lua	Computador/Turtle ao lado de um dispositivo Redstone	Recebe comandos remotos para ligar/desligar Redstone (salve como startup).
-⚙️ Configuração Inicial
-1. Preparação do Manager
-Salve o código do Manager como manager.lua (ou startup) no PC principal.
-EDITE E INSIRA A CHAVE GEMINI API (veja seção 🔑).
-Conecte os periféricos necessários: chat_box, monitor, modem wireless, player_detector.
-2. Registro de Storages
-O Manager precisa saber a localização e o tipo dos seus inventários:
-code
-Code
-!addStorage <Nome> <Tipo> [Fonte/NA] <X> <Y> <Z>
-Parâmetro	Exemplo	Descrição
-<Nome>	MinaFerro	Nome único para o Manager.
-<Tipo>	Bau / AE2	Tipo de inventário.
-[Fonte/NA]	me_bridge_1 / NA	Nome do periférico do AE2 (se for AE2) ou NA (se for baú).
-<X> <Y> <Z>	100 64 200	Coordenadas do bloco do inventário.
-3. Configuração da Frota
-Coloque o drone_fleet.lua como startup no seu Turtle.
-O Turtle irá ligar, pedir um nome (ex: T1) e tentar se registrar.
-Se for a primeira vez, ele pedirá as coordenadas X Y Z e a Direção (0=N, 1=L, 2=S, 3=O) da Garagem.
-4. Configuração do Scanner
-Coloque o static_scanner.lua como startup no PC/Turtle.
-O script pedirá um nome de storage (deve ser um nome registrado previamente com !addStorage).
-Certifique-se de que o PC/Turtle esteja encostado no inventário que ele deve escanear.
-5. Configuração do Redstone Node
-Coloque o redstone_node.lua como startup no PC/Turtle.
-O script pedirá o Nome do dispositivo (ex: LuzSala).
-O script pedirá o Lado do bloco que deve ser ativado/desativado (ex: back, top).
-No Manager, registre o switch (opcional, apenas para dashboard): !addSwitch LuzSala.
-💬 Comandos de Chat (ADMINS)
-Apenas jogadores listados na tabela ADMINS no manager.lua podem usar os comandos:
-Comando	Função
-!help	Lista seções de ajuda.
-!addStorage <...>	Registra um inventário no sistema.
-!setFuelStation <X> <Y> <Z>	Define a localização da estação de combustível.
-!moveStorage <Origem> <Dest> <Item> <Qtd>	Inicia um trabalho logístico (requer pelo menos um AE2).
-!emptyStorage <Bau> <Dest>	Mover todo o conteúdo de um Baú para outro inventário/AE2.
-!statsStorage <Nome> [Filtro]	Pede ao Manager ou Scanner os itens e quantidades.
-!pingStorage <Item> < > <Qtd> <Storage>	Adiciona um alerta se o estoque estiver abaixo (<) ou acima (>) do limite.
-!redstone <Nome> <ON/OFF>	Envia um comando para um Redstone Node.
-Filo, <pergunta>	Interage com o modelo Gemini Flash.
-!quiz	Inicia um quiz simples sobre Minecraft.
-⚠️ DISCALIMER ADICIONAL
+Compreendido! O Markdown funciona bem, mas a aparência final depende de como você o organiza. O seu arquivo estava um pouco denso na visualização.
+
+Vamos reestruturar o README com mais separadores visuais, blocos de código em destaque e uma tipografia mais clara, maximizando o uso de emojis e GFM para que o seu projeto se destaque na página do GitHub.
+
+Segue a versão final e mais estilizada:
+
+***
+
+# 🤖 FILO AI - Sistema de Automação Logística v1.6
+## ✨ Gerenciamento Centralizado e Frota Inteligente para CC: Tweaked
+
+O **FILO AI** é um projeto ambicioso para automação completa de bases no Minecraft Modded (ComputerCraft/CC: Tweaked). Ele orquestra uma frota de **Turtles de Logística**, monitora seus **inventários**, gerencia o **Redstone** e oferece um ponto de **interação via IA** para sua base.
+
+---
+
+## 🚨 AVISO DE CÓDIGO GERADO POR IA 🚨
+
+> **IMPORTANTE:** Este código foi **gerado primariamente por Inteligência Artificial (Gemini)**. Embora funcional, ele não passou por uma auditoria completa de segurança ou estabilidade.
+>
+> **Uso e Segurança:**
+> *   **Pode conter Bugs:** Prepare-se para possíveis *edge cases* em Pathfinding ou falhas de comunicação no Rednet.
+> *   **Chave API Exposta:** Sua chave do Gemini fica no arquivo principal. **NÃO COMPARTILHE** o arquivo `manager.lua` publicamente após inserir sua chave.
+>
+> **Use por sua conta e risco.**
+
+---
+
+## 🔑 1. Configuração Crítica da API
+
+O recurso de IA requer que você obtenha sua chave no [Google AI Studio](https://ai.google.dev/) e a insira no arquivo **`manager.lua`**.
+
+```lua
+-- manager.lua (Aprox. linha 20)
+
+local GEMINI_API_KEY = "SUA_CHAVE_AQUI" -- <<< ❌ EDITE AQUI COM SUA CHAVE! ❌
+```
+
+---
+
+## 🌟 2. Recursos do Sistema
+
+| Categoria | Recurso | Descrição Detalhada |
+| :---: | :--- | :--- |
+| **Logística** | 🐢 Frota Autônoma | Gerenciamento de fila de tarefas (`!moveStorage`, `!emptyStorage`) e despacho do Turtle mais próximo disponível. |
+| **Navegação** | 🗺️ Pathfinding A* 3D | Turtles navegam com A* (o algoritmo de menor caminho), mapeando e desviando dinamicamente de blocos. |
+| **Controle** | ⚡ Redstone Remoto | Acionamento de qualquer dispositivo Redstone da base via chat (`!redstone <Nome> <ON/OFF>`). |
+| **Inventário** | 📦 Pings e Relatórios | Scanners estáticos e periféricos locais reportam inventário. `!pingStorage` envia alertas se o item estiver **abaixo ou acima** do limite. |
+| **Interface** | 🧠 IA e Dashboard | Respostas no chat sobre Minecraft Modded via Gemini. Dashboard interativo no monitor para gerenciamento de frota e switches. |
+
+---
+
+## 🧱 3. Arquitetura e Instalação
+
+O FILO é composto por 4 scripts que trabalham juntos via Rednet. Todos os scripts clientes (Drone, Scanner, Node) devem ser salvos como `startup` para iniciar automaticamente.
+
+| Script | Local de Instalação | Finalidade | Salve como |
+| :--- | :--- | :--- | :--- |
+| **`manager.lua`** | 🖥️ PC Central (com periféricos) | Lógica principal, IA, Fila de Tarefas, Dashboard. | `manager.lua` |
+| **`drone_fleet.lua`** | 🐢 Turtle de Logística | Execução de Pathfinding, coleta, entrega e reabastecimento. | `startup` |
+| **`static_scanner.lua`** | 🔬 PC/Turtle ao lado do Storage | Coleta dados de inventários de Baús, barris, AE2, etc. | `startup` |
+| **`redstone_node.lua`** | 💡 PC/Turtle ao lado do Redstone | Ativa/Desativa um bloco de Redstone específico. | `startup` |
+
+### 3.1. Periféricos do Manager
+
+O PC Central (`manager.lua`) deve ter os seguintes periféricos conectados:
+
+*   `chat_box`
+*   `monitor`
+*   `modem` (Wireless)
+*   `player_detector` (Opcional, para `!sorteio`)
+
+---
+
+## 📝 4. Comandos de Configuração e Uso (ADMINS)
+
+Apenas jogadores listados na tabela `ADMINS` dentro do `manager.lua` podem executar comandos.
+
+### 4.1. Configuração de Base
+
+| Comando | Descrição | Exemplo |
+| :--- | :--- | :--- |
+| `!addStorage` | Cadastra um novo inventário no sistema. | `!addStorage MinaFerro Bau NA 100 64 200` |
+| `!setFuelStation` | Define as coordenadas da estação de reabastecimento. | `!setFuelStation 105 64 205` |
+| `!addSwitch` | Registra um Redstone Node no dashboard. | `!addSwitch LuzCorredor` |
+
+### 4.2. Logística e Transporte
+
+| Comando | Descrição | Exemplo |
+| :--- | :--- | :--- |
+| `!moveStorage` | Move uma quantidade específica de **Item** entre Storages. | `!moveStorage Fornalha RedeAE2 ferro_ingot 64` |
+| `!emptyStorage` | Esvazia **todo** o conteúdo de um Baú (Fonte) para um Destino. | `!emptyStorage Lixo BasePrincipal` |
+
+### 4.3. Monitoramento e Alertas
+
+| Comando | Descrição | Exemplo |
+| :--- | :--- | :--- |
+| `!statsStorage` | Relatório de inventário em tempo real (pode sincronizar o Scanner). | `!statsStorage RedeAE2 diamante` |
+| `!pingStorage` | Cria/Atualiza um alerta de quantidade de item. | `!pingStorage carvão < 1000 Combustivel` |
+
+### 4.4. Controle Remoto e IA
+
+| Comando | Descrição | Exemplo |
+| :--- | :--- | :--- |
+| `!redstone` | Controla um Redstone Node já configurado. | `!redstone LuzCorredor ON` |
+| `Filo, <pergunta>` | Inicia a interação com a IA (não precisa de `!`). | `Filo, como eu automatizo a producao de eletricidade?` |
