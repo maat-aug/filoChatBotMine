@@ -1,37 +1,16 @@
-Compreendido! O Markdown funciona bem, mas a aparência final depende de como você o organiza. O seu arquivo estava um pouco denso na visualização.
+## 🚨 AVISOS 🚨
 
-Vamos reestruturar o README com mais separadores visuais, blocos de código em destaque e uma tipografia mais clara, maximizando o uso de emojis e GFM para que o seu projeto se destaque na página do GitHub.
-
-Segue a versão final e mais estilizada:
-
-***
-
-# 🤖 FILO AI - Sistema de Automação Logística v1.6
-## ✨ Gerenciamento Centralizado e Frota Inteligente para CC: Tweaked
-
-O **FILO AI** é um projeto ambicioso para automação completa de bases no Minecraft Modded (ComputerCraft/CC: Tweaked). Ele orquestra uma frota de **Turtles de Logística**, monitora seus **inventários**, gerencia o **Redstone** e oferece um ponto de **interação via IA** para sua base.
-
----
-
-## 🚨 AVISO DE CÓDIGO GERADO POR IA 🚨
-
-> **IMPORTANTE:** Este código foi **gerado primariamente por Inteligência Artificial (Gemini)**. Embora funcional, ele não passou por uma auditoria completa de segurança ou estabilidade.
->
 > **Uso e Segurança:**
 > *   **Pode conter Bugs:** Prepare-se para possíveis *edge cases* em Pathfinding ou falhas de comunicação no Rednet.
-> *   **Chave API Exposta:** Sua chave do Gemini fica no arquivo principal. **NÃO COMPARTILHE** o arquivo `manager.lua` publicamente após inserir sua chave.
->
-> **Use por sua conta e risco.**
+> *   **Chave API Exposta:** Sua chave do Gemini fica no arquivo principal. **NÃO COMPARTILHE** o arquivo `filo.lua` publicamente após inserir sua chave.
 
 ---
 
 ## 🔑 1. Configuração Crítica da API
 
-O recurso de IA requer que você obtenha sua chave no [Google AI Studio](https://ai.google.dev/) e a insira no arquivo **`manager.lua`**.
+O recurso de IA requer que você obtenha sua chave no [Google AI Studio](https://ai.google.dev/) e a insira no arquivo **`filo.lua`**.
 
-```lua
--- manager.lua (Aprox. linha 20)
-
+```
 local GEMINI_API_KEY = "SUA_CHAVE_AQUI" -- <<< ❌ EDITE AQUI COM SUA CHAVE! ❌
 ```
 
@@ -55,7 +34,7 @@ O FILO é composto por 4 scripts que trabalham juntos via Rednet. Todos os scrip
 
 | Script | Local de Instalação | Finalidade | Salve como |
 | :--- | :--- | :--- | :--- |
-| **`manager.lua`** | 🖥️ PC Central (com periféricos) | Lógica principal, IA, Fila de Tarefas, Dashboard. | `manager.lua` |
+| **`filo.lua`** | 🖥️ PC Central (com periféricos) | Lógica principal, IA, Fila de Tarefas, Dashboard. | `manager.lua` |
 | **`drone_fleet.lua`** | 🐢 Turtle de Logística | Execução de Pathfinding, coleta, entrega e reabastecimento. | `startup` |
 | **`static_scanner.lua`** | 🔬 PC/Turtle ao lado do Storage | Coleta dados de inventários de Baús, barris, AE2, etc. | `startup` |
 | **`redstone_node.lua`** | 💡 PC/Turtle ao lado do Redstone | Ativa/Desativa um bloco de Redstone específico. | `startup` |
@@ -79,9 +58,9 @@ Apenas jogadores listados na tabela `ADMINS` dentro do `manager.lua` podem execu
 
 | Comando | Descrição | Exemplo |
 | :--- | :--- | :--- |
-| `!addStorage` | Cadastra um novo inventário no sistema. | `!addStorage MinaFerro Bau NA 100 64 200` |
+| `!addStorage` | Cadastra um novo inventário no sistema. | `!addStorage bauTeste Bau NA 100 64 200` |
 | `!setFuelStation` | Define as coordenadas da estação de reabastecimento. | `!setFuelStation 105 64 205` |
-| `!addSwitch` | Registra um Redstone Node no dashboard. | `!addSwitch LuzCorredor` |
+| `!addSwitch` | Registra um Redstone Node no dashboard. | `!addSwitch redstoneLamp` |
 
 ### 4.2. Logística e Transporte
 
