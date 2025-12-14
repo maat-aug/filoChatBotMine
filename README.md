@@ -13,7 +13,7 @@
 
 ## 📦 Download do Projeto (Pastebins)
 
-Use o comando `pastebin get <ID> <nome_do_arquivo>` no ComputerCraft/CC: Tweaked para baixar cada script.
+Use o comando `pastebin get <ID> <nome_do_arquivo>` para baixar cada script.
 
 | Arquivo | Link | ID do Pastebin |
 | :--- | :--- | :--- |
