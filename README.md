@@ -4,9 +4,10 @@
 
 ## 🚨 AVISOS 🚨
 
-> **Uso e Segurança:**
-> *   **Pode conter Bugs:**
+> **Uso**
 > *   **Chave API Exposta:** Sua chave do Gemini fica no arquivo principal. **NÃO COMPARTILHE** o arquivo `filo.lua` publicamente após inserir sua chave.
+> *   ** Apenas jogadores listados na tabela `ADMINS` dentro do `filo.lua` podem executar comandos. **
+
 
 ---
 
@@ -49,14 +50,14 @@ O FILO é composto por 4 scripts que trabalham juntos via Rednet. Todos os scrip
 
 | Script | Local de Instalação | Finalidade | Salve como |
 | :--- | :--- | :--- | :--- |
-| **`filo.lua`** | 🖥️ PC Central (com periféricos) | Lógica principal, IA, Fila de Tarefas, Dashboard. | `manager.lua` |
-| **`drone_fleet.lua`** | 🐢 Turtle de Logística | Execução de Pathfinding, coleta, entrega e reabastecimento. | `startup` |
+| **`filo.lua`** | 🖥️ PC Central (com periféricos) | Lógica principal, IA, Fila de Tarefas, Dashboard. | `startup` |
+| **`drone_fleet.lua`** | 🐢 Turtle de Logística | Execução de Pathfinding, coleta, entrega e auto-reabastecimento. | `startup` |
 | **`static_scanner.lua`** | 🔬 PC/Turtle ao lado do Storage | Coleta dados de inventários de Baús, barris, AE2, etc. | `startup` |
 | **`redstone_node.lua`** | 💡 PC/Turtle ao lado do Redstone | Ativa/Desativa um bloco de Redstone específico. | `startup` |
 
 ### 3.1. Periféricos do Manager
 
-O PC Central (`manager.lua`) deve ter os seguintes periféricos conectados:
+O PC Central (`filo.lua`) deve ter os seguintes periféricos conectados:
 
 *   `chat_box`
 *   `monitor`
@@ -65,9 +66,7 @@ O PC Central (`manager.lua`) deve ter os seguintes periféricos conectados:
 
 ---
 
-## 📝 4. Comandos de Configuração e Uso (ADMINS)
-
-Apenas jogadores listados na tabela `ADMINS` dentro do `manager.lua` podem executar comandos.
+## 📝 4. Comandos de Configuração e Uso
 
 ### 4.1. Configuração de Base
 
