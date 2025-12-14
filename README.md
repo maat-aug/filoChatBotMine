@@ -5,19 +5,25 @@
 ## 🚨 AVISOS 🚨
 
 > **Uso e Segurança:**
-> *   **Pode conter Bugs:** Prepare-se para possíveis *edge cases* em Pathfinding ou falhas de comunicação no Rednet.
+> *   **Pode conter Bugs:**
 > *   **Chave API Exposta:** Sua chave do Gemini fica no arquivo principal. **NÃO COMPARTILHE** o arquivo `filo.lua` publicamente após inserir sua chave.
 
 ---
 
-## Pastebins:
-| Arquivo | Link |
-| :---: | :--- | :--- |
-| Filo.lua | https://pastebin.com/9PHxCbc2 |
-| FleetTurtle.lua | https://pastebin.com/biDiu192 |
-| ScannerTurtle.lua | https://pastebin.com/2dUMU16c | 
-| RedstoneTurtle.lua | https://pastebin.com/axWVu3yk |
+## 📦 Download do Projeto (Pastebins)
 
+Use o comando `pastebin get <ID> <nome_do_arquivo>` no ComputerCraft/CC: Tweaked para baixar cada script.
+
+| Arquivo | Link | ID do Pastebin |
+| :--- | :--- | :--- |
+| **`Filo.lua`** | https://pastebin.com/9PHxCbc2 | `9PHxCbc2` |
+| **`FleetTurtle.lua`** | https://pastebin.com/biDiu192 | `biDiu192` |
+| **`ScannerTurtle.lua`** | https://pastebin.com/2dUMU16c | `2dUMU16c` |
+| **`RedstoneTurtle.lua`** | https://pastebin.com/axWVu3yk | `axWVu3yk` |
+
+**Exemplo de Download:**
+```bash
+pastebin get 9PHxCbc2 Filo.lua
 ---
 ## 🔑 1. Configuração Crítica da API
 
