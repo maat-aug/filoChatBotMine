@@ -10,7 +10,7 @@
 
 ---
 
-# Pastebins:
+## Pastebins:
 | Arquivo | Link |
 | :---: | :--- | :--- |
 | Filo.lua | https://pastebin.com/9PHxCbc2 |
