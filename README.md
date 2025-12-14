@@ -6,7 +6,7 @@
 
 > **Uso**
 > *   **Chave API Exposta:** Sua chave do Gemini fica no arquivo principal. **NÃO COMPARTILHE** o arquivo `filo.lua` publicamente após inserir sua chave.
-> *   ** Apenas jogadores listados na tabela `ADMINS` dentro do `filo.lua` podem executar comandos. **
+> *   **Apenas jogadores listados na tabela `ADMINS` dentro do `filo.lua` podem executar comandos.**
 
 
 ---
