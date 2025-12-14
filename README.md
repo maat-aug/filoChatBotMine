@@ -21,10 +21,6 @@ Use o comando `pastebin get <ID> <nome_do_arquivo>` no ComputerCraft/CC: Tweaked
 | **`ScannerTurtle.lua`** | https://pastebin.com/2dUMU16c | `2dUMU16c` |
 | **`RedstoneTurtle.lua`** | https://pastebin.com/axWVu3yk | `axWVu3yk` |
 
-**Exemplo de Download:**
-```bash
-pastebin get 9PHxCbc2 Filo.lua
----
 ## 🔑 1. Configuração Crítica da API
 
 O recurso de IA requer que você obtenha sua chave no [Google AI Studio](https://ai.google.dev/) e a insira no arquivo **`filo.lua`**.
