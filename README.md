@@ -17,10 +17,10 @@ Use o comando `pastebin get <ID> <nome_do_arquivo>` no ComputerCraft/CC: Tweaked
 
 | Arquivo | Link | ID do Pastebin |
 | :--- | :--- | :--- |
-| **`Filo.lua`** | https://pastebin.com/9PHxCbc2 | `9PHxCbc2` |
-| **`FleetTurtle.lua`** | https://pastebin.com/biDiu192 | `biDiu192` |
-| **`ScannerTurtle.lua`** | https://pastebin.com/2dUMU16c | `2dUMU16c` |
-| **`RedstoneTurtle.lua`** | https://pastebin.com/axWVu3yk | `axWVu3yk` |
+| **`filo.lua`** | https://pastebin.com/9PHxCbc2 | `9PHxCbc2` |
+| **`fleetTurtle.lua`** | https://pastebin.com/biDiu192 | `biDiu192` |
+| **`scannerTurtle.lua`** | https://pastebin.com/2dUMU16c | `2dUMU16c` |
+| **`redstoneTurtle.lua`** | https://pastebin.com/axWVu3yk | `axWVu3yk` |
 
 ## 🔑 1. Configuração Crítica da API
 
